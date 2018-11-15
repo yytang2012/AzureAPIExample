@@ -560,3 +560,7 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+test/
+*/local.settings.json
+.env

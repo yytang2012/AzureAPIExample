@@ -18,20 +18,11 @@ from azure.eventhub import Offset, EventHubClientAsync, AsyncReceiver
 
 # import examples
 # logger = examples.get_logger(logging.INFO)
+from setting import ADDRESS, USER, KEY
 
-# Address can be in either of these formats:
-# "amqps://<URL-encoded-SAS-policy>:<URL-encoded-SAS-key>@<mynamespace>.servicebus.windows.net/myeventhub"
-# "amqps://<mynamespace>.servicebus.windows.net/myeventhub"
-ADDRESS = "amqps://Home-eventhubs.servicebus.windows.net/eventhubs-web"
-
-# SAS policy and key are not required if they are encoded in the URL
-# USER = os.environ.get('EVENT_HUB_SAS_POLICY')
-# KEY = os.environ.get('EVENT_HUB_SAS_KEY')
-USER = "yytangKey"
-KEY = "nGor+O62XsKK2/AjJp+q4poO5pAlHBzyDVRi9FdLU9I="
 CONSUMER_GROUP = "$default"
-# OFFSET = Offset(datetime.datetime.utcnow())"
-OFFSET = Offset("-1")
+OFFSET = Offset(datetime.datetime.utcnow())
+# OFFSET = Offset("-1")
 
 
 async def pump(client, partition):
